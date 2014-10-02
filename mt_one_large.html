@@ -1,0 +1,21 @@
+	<article class="big-text-module">
+    <header><h2 class="section-header"><span>~</span> <$mt:EntryTitle$> <span>~</span></h2></header>
+			<p class="page-subhead"><$mt:EntryBody$>  </p>
+
+    
+<mt:If tag="EntryDataImage_one">      
+<$mt:EntryDataImage_one setvar="image"$>             
+ </mt:If> 
+    
+		<figure class="big-text-module-image">
+				<div class="med-photo-overlay"></div>      
+				<picture>
+					<source srcset="<$mt:BlogURL$>siteart/xlarge_<$mt:Var name="image"$>" media="(min-width:700px)">
+					<source srcset="<$mt:BlogURL$>siteart/large_<$mt:Var name="image"$>" media="(min-width: 450px)">
+					<source srcset="<$mt:BlogURL$>siteart/medium_<$mt:Var name="image"$>">
+					<img src="<$mt:BlogURL$>siteart/large_<$mt:Var name="image"$>" alt="">
+				</picture>  
+		
+			</figure>
+	
+	</article>

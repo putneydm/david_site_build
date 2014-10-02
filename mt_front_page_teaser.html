@@ -1,0 +1,56 @@
+<mt:EntryCategories>
+<mt:If tag="mt:CategoryLabel" ne="$page_category">
+<$mt:CategoryLabel setvar="item-category"$>
+</mt:if>
+</mt:EntryCategories>
+
+<article class="teaser-module clearfix">
+		<header>
+     
+        <h4 class="teaser-module-head"><a href="<$mt:BlogArchiveURL$><$mt:Var name="page_category"$>/<$mt:Var name="item-category"$>" rel="next"><$mt:EntryTitle$> j</a></h4>
+		</header>
+
+		<div class="teaser-module-abstract">
+		<p><$mt:EntryBody strip_tags="1" smarty_pants="1"$> <a href="<$mt:BlogArchiveURL$><$mt:Var name="page_category"$>/<$mt:Var name="item-category"$>" rel="next" class="teaser-module-abstract-link">More </a></p>
+		</div>
+
+		<a href="<$mt:BlogArchiveURL$><$mt:Var name="page_category"$>/<$mt:Var name="item-category"$>" rel="next">
+		<div class="teaser-module-art">
+		<figure class="teaser-module-mainart">
+			<div class="med-photo-overlay"></div>
+
+			<picture>
+				<source srcset="<$mt:BlogArchiveURL$>siteart/xsmall.jpg" media="(min-width:770px)">
+				<source srcset="<$mt:BlogArchiveURL$>siteart/medium.jpg" media="(min-width:500px)">
+				<source srcset="<$mt:BlogArchiveURL$>siteart/xsmall.jpg" media="(min-width:500px)">
+				<source srcset="<$mt:BlogArchiveURL$>siteart/medium.jpg" media="(min-width:350px)">
+				<source srcset="<$mt:BlogArchiveURL$>siteart/xsmall.jpg">
+				<img src="<$mt:BlogArchiveURL$>siteart/medium.jpg" alt="">
+			</picture>	  
+
+		</figure>
+	
+		<figure class="teaser-module-secondary">
+			<div class="round-photo-overlay"></div>
+			<img src="<$mt:BlogArchiveURL$>siteart/square_80_80.svg" alt="">
+		</figure>	
+		
+		<figure class="teaser-module-secondary">
+			<div class="round-photo-overlay"></div>		
+			<img src="<$mt:BlogArchiveURL$>siteart/square_80_80.svg" alt="">		
+		</figure>
+		
+		<div class="teaser-module-arrow">
+			<div class="<$mt:BlogArchiveURL$>svg-container" aria-hidden="true">
+			
+				<svg width="16" height="28">
+				  <use x="0" y="0" xlink:href="#chevron" />
+				</svg>
+			
+			</div>
+			
+		</div>
+		</div>
+		</a>
+	
+	</article>

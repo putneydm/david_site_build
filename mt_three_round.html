@@ -1,0 +1,57 @@
+		<article>
+		<header><h2 class="section-header"><span>~</span> <$mt:EntryTitle$> <span>~</span></h2></header>
+ 
+<mt:If tag="EntryDataImage_one">      
+<$mt:EntryDataImage_one setvar="image_one"$>             
+ </mt:If> 
+    
+<mt:If tag="EntryDataImage_two">      
+<$mt:EntryDataImage_two setvar="image_two"$>             
+</mt:If>   
+    
+<mt:If tag="EntryDataImage_three">      
+<$mt:EntryDataImage_three setvar="image_three"$>             
+</mt:If> 
+        
+        
+<mt:If tag="EntryDataSlideshow">
+        <$mt:EntryDataSlideshow setvar="value"$>              
+</mt:If>
+
+        <p> <$mt:Var name="value"$> yyy </p>
+        
+<mt:If name="value" eq="1">
+        <p>slideshow</p>
+ 
+
+<mt:else>
+              
+<ul class="triple-module-portfolio clearfix">		
+		<li>
+		<figure class="triple-module-image-portfolio">
+			<div class="round-photo-overlay"></div>
+			<img src="<$mt:BlogURL$>siteart/square_<$mt:Var name="image_one"$>" alt="">
+		</figure>
+		<p class="triple-module-text"><mt:EntryBody></p>		
+		</li>
+
+		<li>
+		<figure class="triple-module-image-portfolio">
+			<div class="round-photo-overlay"></div>		
+			<img src="<$mt:BlogURL$>siteart/square_<$mt:Var name="image_two"$>" alt="">
+		</figure>
+		<p class="triple-module-text"><mt:EntryDataBody_three></p>		
+		</li>		
+		
+		<li>
+		<figure class="triple-module-image-portfolio">
+			<div class="round-photo-overlay"></div>		
+			<img src="<$mt:BlogURL$>siteart/square_<$mt:Var name="image_three"$>" alt="">
+		</figure>
+		<p class="triple-module-text"><mt:EntryDataBody_three></p>
+		</li>
+		
+	</ul>
+        
+ </mt:if>          
+	</article>	
