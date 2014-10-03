@@ -72,8 +72,13 @@
 <div class="portfolio-introduction-container">
 <header class="portfolio-introduction">
 
-                <h1 class="portfolio-project-name"><mt:PageDataHeader></h1>
+
+
+             <h1 class="portfolio-project-name"><mt:PageDataHeader></h1>
             <p class="page-subhead"><mt:PageDataPage_subhead></p>
+
+
+ 
 
 
 </header>
@@ -82,18 +87,47 @@
 
 <div class="teaser-module-container">
 
-pdc <$mt:PageDataCategory>
-<$mt:PageDataCategory setvar="page_category"$>
+		<li>
+		<article class="resume-information">
+		<h3 class="resume-subheader">Designer of BDCwire.com</h3>
+		<p>A Boston company is proposing to redevelop a drab cluster of office buildings near Faneuil Hall into a more modern commercial complex with restaurants, stores, hotel rooms and residences. The plan by Related Beal would retain a large </p>
+		</article>	
+	</li>
 
-<mt:Entries include_blogs="10">
+
+<ul class="resume-details">
+		<li>
+		<article class="resume-information">
+		<h2 class="hidden">What I do</h2>
+		<p class="resume-info-line">Boston, Mass, 2012-present</p>
+		</article>
+	</li>
+</ul>
 
 
+<h1 class="resume-section-header"><span>~ </span>Boston Globe<span> ~</span> </h1>
+<mt:entries category="about/subcategory">
+<ul class="resume-details">
+<li>
+		<article class="resume-information">
+		<h3 class="resume-subheader"><mt:entrytitle></h3>
+		<p> <mt:entrybody> </p>
+		</article>	
+	</li>
+</mt:entries>
+</ul>
 
-<mt:If tag="EntryCategory" eq="pilot">
-<mt:entrytitle>
-
-</mt:if>
-
+<h1 class="resume-section-header"><span>~ </span>The Virginian-Pilot<span> ~</span> </h1>
+<mt:entries category="about/subcategorytoo">
+<ul class="resume-details">
+<li>
+		<article class="resume-information">
+		<h3 class="resume-subheader"><mt:entrytitle></h3>
+		<p> <mt:entrybody> </p>
+		</article>	
+	</li>
+</mt:entries>
+</ul>
 
 
 <!--
