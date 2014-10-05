@@ -12,8 +12,12 @@
  <mt:PageDataHero_art>
 <$mt:Var name="hero_art"$>
 <$mt:PageDataHero_art setvar="hero_art"$>
-
 </mt:If>
+
+<mt:If tag="PageDataCategory">
+<$mt:PageDataCategory setvar="page_category"$>
+</mt:If>
+
 
 <style rel="stylesheet" type="text/css" media="all">
 <$mt:Include module="embedded_CSS_inside"$>
