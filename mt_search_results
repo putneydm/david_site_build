@@ -8,7 +8,7 @@
 <!-- @import "modules/head/meta.html" -->  
  
 
-<$mt:Include module="search_results_script"$>
+
  
 <style rel="stylesheet" type="text/css" media="all">
 <$mt:Include module="embedded_CSS_inside"$>
@@ -36,24 +36,21 @@
 
 <!-- @import "modules/head/skip_links.html" --> 
 
- <$mt:Include module="inside_page_header"$>
-
-
-
-
+<$mt:Include module="inside_page_header"$>
 
 <main id="main">
 
+<div class="blog-container search-results"> 
 
-	<div class="blog-container search-results">
+<section>
 <mt:SearchResults>	
- <mt:SearchResultsHeader>   
-<h1 id="page-title" class="search-results-header">    
+ <mt:SearchResultsHeader> 
+<h1 class="search-results-header">    
   <mt:IfTagSearch>
          Results for &ldquo;<$mt:SearchString$>&rdquo;
         </mt:IfTagSearch>  
 	</h1>
-</mt:SearchResultsHeader>   
+</mt:SearchResultsHeader> 
 
 <article class="search-results-entry">
 <h2 class="blog-headline"><mt:EntryTitle smarty_pants="1"></h2>
@@ -61,9 +58,15 @@
 
 <div class="blog-entry-text">
 <p><mt:EntryBody convert_breaks="0" words="65" smarty_pants="1">&nbsp;&#133;&nbsp;<a href="<$mt:EntryLink$>" rel="next" class="search-results-link">More</a></p>
-</article>
-</mt:SearchResults> 
 </div>
+</article>
+
+</mt:SearchResults>
+
+
+</section>
+
+</div> 
 </main>
 
 <$mt:Include module="footer"$>
