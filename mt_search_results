@@ -53,7 +53,7 @@
 </mt:SearchResultsHeader> 
 
 <article class="search-results-entry">
-<h2 class="blog-headline"><mt:EntryTitle smarty_pants="1"></h2>
+<h2 class="blog-headline"><a href="<mt:entrypermalink>" rel="next"><mt:EntryTitle smarty_pants="1"></a></h2>
     <p class="blog-entry-date"><mt:EntryDate format="%A, %b %e, %Y"></p>
 
 <div class="blog-entry-text">
