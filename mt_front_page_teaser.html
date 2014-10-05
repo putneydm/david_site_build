@@ -1,5 +1,5 @@
 <mt:EntryCategories>
-<mt:If tag="mt:CategoryLabel" ne="$page_category">
+<mt:If tag="CategoryLabel" ne="page_category">
 <$mt:CategoryLabel setvar="item-category"$>
 </mt:if>
 </mt:EntryCategories>
@@ -7,7 +7,7 @@
 <article class="teaser-module clearfix">
 		<header>
      
-        <h4 class="teaser-module-head"><a href="<$mt:BlogArchiveURL$><$mt:Var name="page_category"$>/<$mt:Var name="item-category"$>" rel="next"><$mt:EntryTitle$> j</a></h4>
+        <h4 class="teaser-module-head"><a href="<$mt:BlogArchiveURL$><$mt:Var name="page_category"$>/<$mt:Var name="item-category"$>" rel="next"><$mt:EntryTitle$></a></h4>
 		</header>
 
 		<div class="teaser-module-abstract">
