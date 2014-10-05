@@ -156,8 +156,14 @@
 	
 		<!--  teasers here -->
     
-    <mt:Entries category="Design" include_blogs="10" lastn="2">   
-    <$mt:Include module="front_page_teaser"$> 
+<$mt:Var name="counter" value="0"$>
+    <mt:Entries category="Design" include_blogs="10"> 
+    <mt:If tag="EntryDataType" eq="header">
+     <mt:If name="counter" lt="2">   
+    <$mt:Include module="front_page_teaser"$>
+      <$mt:SetVar name="counter" op="+" value="1"$>
+</mt:if>
+    </mt:if>
     </mt:Entries>
 
 	</section>
@@ -195,8 +201,14 @@
 	<h3 class="section-header"><span>~</span> Projects <span>~</span></h3>
 	<p class="page-subhead">Not everything is about work. These are hackathon entries or sites that I made for fun</p>
 	
-	<mt:Entries category="Projects" include_blogs="10" lastn="2">   
-    	  <$mt:Include module="front_page_teaser"$>    
+    <$mt:Var name="counter" value="0"$>
+    <mt:Entries category="Projects" include_blogs="10"> 
+    <mt:If tag="EntryDataType" eq="header">
+     <mt:If name="counter" lt="2">   
+    <$mt:Include module="front_page_teaser"$> 
+      <$mt:SetVar name="counter" op="+" value="1"$>
+</mt:if>
+    </mt:if>
     </mt:Entries>
 
 
