@@ -2,17 +2,17 @@
 <article class="blog-entry">
     
 	<mt:Entries category="blog entry">
-	<h2 class="blog-headline"><mt:EntryTitle></h2>
+<h2 class="blog-headline"><a href="<mt:entrypermalink>" rel="next"><mt:EntryTitle smarty_pants="1"></a></h2>
 
     <p class="blog-entry-date"><mt:EntryDate format="%A, %b %e, %Y"></p>
 
 <div class="blog-entry-text">
-<mt:EntryBody>
+<mt:EntryBody smarty_pants="1">
 
 <footer>
 	<ul class="blog-tags">
 <mt:EntryTags>
-    <li><a href="<$mt:TagSearchLink$>" rel="next"><mt:TagName></a></li>
+    <li><a href="<$mt:TagSearchLink$>" rel="tag"><mt:TagName></a></li>
 </mt:EntryTags>
 	</ul>
 </footer>
