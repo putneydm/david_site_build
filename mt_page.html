@@ -76,76 +76,31 @@
 <div class="portfolio-introduction-container">
 <header class="portfolio-introduction">
 
-
-
-             <h1 class="portfolio-project-name"><mt:PageDataHeader></h1>
-            <p class="page-subhead"><mt:PageDataPage_subhead></p>
-
-
- 
-
-
+<h1 class="portfolio-project-name"><mt:PageDataHeader></h1>
+<p class="page-subhead"><mt:PageDataPage_subhead> y</p>
 </header>
 </div>
 
 
+<mt:If name="page_category" eq="about">
+<$mt:Include module="resume_module"$> 
+</mt:if>
+
+<mt:If name="page_category" eq="Blog">
+<$mt:Include module="blog_module"$> 
+</mt:if>
+
+<mt:If name="page_category" like="^(Projects|Design)">
 <div class="teaser-module-container">
-
-		<li>
-		<article class="resume-information">
-		<h3 class="resume-subheader">Designer of BDCwire.com</h3>
-		<p>A Boston company is proposing to redevelop a drab cluster of office buildings near Faneuil Hall into a more modern commercial complex with restaurants, stores, hotel rooms and residences. The plan by Related Beal would retain a large </p>
-		</article>	
-	</li>
-
-
-<ul class="resume-details">
-		<li>
-		<article class="resume-information">
-		<h2 class="hidden">What I do</h2>
-		<p class="resume-info-line">Boston, Mass, 2012-present</p>
-		</article>
-	</li>
-</ul>
-
-
-<h1 class="resume-section-header"><span>~ </span>Boston Globe<span> ~</span> </h1>
-<mt:entries category="about/subcategory">
-<ul class="resume-details">
-<li>
-		<article class="resume-information">
-		<h3 class="resume-subheader"><mt:entrytitle></h3>
-		<p> <mt:entrybody> </p>
-		</article>	
-	</li>
-</mt:entries>
-</ul>
-
-<h1 class="resume-section-header"><span>~ </span>The Virginian-Pilot<span> ~</span> </h1>
-<mt:entries category="about/subcategorytoo">
-<ul class="resume-details">
-<li>
-		<article class="resume-information">
-		<h3 class="resume-subheader"><mt:entrytitle></h3>
-		<p> <mt:entrybody> </p>
-		</article>	
-	</li>
-</mt:entries>
-</ul>
-
-
-<!--
+<mt:entries>
 <mt:If tag="EntryCategory" eq="$page_category">
+<mt:If tag="EntryDataType" eq="header">
 <$mt:Include module="front_page_teaser"$> 
 </mt:if>
+</mt:if>
 </mt:Entries>
--->
-
 </div>
-	
-
-
-</section>
+</mt:if>
 
 </main>
 
