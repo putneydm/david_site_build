@@ -53,6 +53,14 @@
 <div class="blog-entry-text">
 <mt:EntryBody smarty_pants="1">
 
+<mt:If tag="EntryDataPull_quote">
+<aside class="blog-pullquote">
+<q><mt:EntryDataPull_quote smarty_pants="1"></q>
+</aside>
+</mt:If>
+<mt:EntryMore smarty_pants="1">
+
+
 <footer>
 	<ul class="blog-tags">
 <mt:EntryTags>
