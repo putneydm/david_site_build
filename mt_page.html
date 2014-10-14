@@ -92,15 +92,25 @@
 
 <mt:If name="page_category" eq="Design">
 <div class="teaser-module-container">
-<mt:entries>
-<mt:If tag="EntryCategory" eq="$page_category">
+<mt:entries category="Design">
 <mt:If tag="EntryDataType" eq="header">
 <$mt:Include module="front_page_teaser"$> 
-</mt:if>
 </mt:if>
 </mt:Entries>
 </div>
 </mt:if>
+
+
+<mt:If name="page_category" eq="Projects">
+<div class="teaser-module-container">
+<mt:entries category="Projects">
+<mt:If tag="EntryDataType" eq="header">
+<$mt:Include module="front_page_teaser"$> 
+</mt:if>
+</mt:Entries>
+</div>
+</mt:if>
+
 
 </main>
 
