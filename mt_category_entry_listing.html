@@ -19,6 +19,11 @@
 <style rel="stylesheet" type="text/css" media="all">
 <$mt:Include module="embedded_CSS_inside"$>
 </style> 
+<noscript>
+<style>
+.hero-art-portfolio{background-image: url('<$mt:BlogURL$>siteart/hero_<$mt:Var name="hero_art"$>.jpg');}@media screen and (max-width: 46.875em) {.hero-art-portfolio {background-image: url('<$mt:BlogURL$>siteart/hero_small_<$mt:Var name="hero_art"$>.jpg');}}</style>
+</noscript>
+
 
 <!--[if lt IE 9]>
 	<link rel="stylesheet" type="text/css" href="css/ie_styles.css" />
@@ -81,7 +86,7 @@
 
      <mt:If tag="EntryDataType" eq="header">
                 <h1 class="portfolio-project-name"><$MTEntryTitle$></h1>
-            <p class="page-subhead"><$<mt:EntryDataCategory_subhead$></p>
+            <p class="page-subhead">yyy<mt:EntryDataCategory_subhead$></p>
      </mt:If>
 
 </mt:Entries>
@@ -93,106 +98,51 @@
 <div class="teaser-module-container">
 
 
-<mt:Entries>
-<mt:setvarblock name="thefullentry">
-
-      <mt:If tag="EntryDataType" eq="one large">
-     <mt:If tag="EntryDataRank" le="5">
-            <$mt:Include module="one_large"$>
-       </mt:If>
-       </mt:If>
-
-      <mt:If tag="EntryDataType" eq="one big two small">
-     <mt:If tag="EntryDataRank" le="5">
-            <$mt:Include module="one_big_two_small"$>
-       </mt:If>
-       </mt:If>
-
-      <mt:If tag="EntryDataType" eq="three round">
-     <mt:If tag="EntryDataRank" le="5">
-            <$mt:Include module="three_round"$>
-       </mt:If>
-       </mt:If>
-
-      <mt:If tag="EntryDataType" eq="three small">
-     <mt:If tag="EntryDataRank" le="5">
-            <$mt:Include module="three_small"$>
-       </mt:If>
-       </mt:If>
-
-      <mt:If tag="EntryDataType" eq="sidesaddle">
-      <mt:If tag="EntryDataRank" le="5">
-      <$mt:Include module="sidesaddle"$>
-       </mt:If>
-       </mt:If>
-
-
-</mt:setvarblock>
-
-<mt:setvarblock name="thelist{$thefullentry}"></mt:setvarblock>
-</MTEntries>
-
-
-<mt:loop name="thelist" sort_by="value numeric">
-<mt:var name="__key__"><mt:var name="__value__">
-</mt:loop>
-</div>
+<mt:entries>
+<mt:EntryDataRank>
+     <mt:If tag="EntryDataRank" eq="1">
+     <mt:EntryDataType>
+     <mt:include module="teaser_types">
+	</mt:if>
+     <mt:If tag="EntryDataRank" eq="2">
+     <mt:EntryDataType>
+     <mt:include module="teaser_types">
+	</mt:if>
+	 <mt:If tag="EntryDataRank" eq="3">
+     <mt:EntryDataType>
+     <mt:include module="teaser_types">
+	</mt:if>
+	<mt:If tag="EntryDataRank" eq="4">
+     <mt:EntryDataType>
+     <mt:include module="teaser_types">
+	</mt:if>
+	<mt:If tag="EntryDataRank" eq="5">
+     <mt:EntryDataType>
+     <mt:include module="teaser_types">
+	</mt:if>
+	<mt:If tag="EntryDataRank" eq="6">
+     <mt:EntryDataType>
+     <mt:include module="teaser_types">
+	</mt:if>
+	<mt:If tag="EntryDataRank" eq="7">
+     <mt:EntryDataType>
+     <mt:include module="teaser_types">
+	</mt:if>
+	<mt:If tag="EntryDataRank" eq="8">
+     <mt:EntryDataType>
+     <mt:include module="teaser_types">
+	</mt:if>
+	<mt:If tag="EntryDataRank" eq="9">
+     <mt:EntryDataType>
+     <mt:include module="teaser_types">
+	</mt:if>
+	<mt:If tag="EntryDataRank" eq="10">
+     <mt:EntryDataType>
+     <mt:include module="teaser_types">
+	</mt:if>
 	
 
-<mt:Entries lastn="1">
-     <mt:If tag="EntryDataType" eq="parallax">
-            <$mt:Include module="parallax"$>
-       </mt:If>
-</MTEntries>
-
-
-
-<div class="teaser-module-container">
-
-
-<mt:Entries>
-<mt:setvarblock name="thefullentrytwo">
-  
-    <mt:If tag="EntryDataType" eq="one large">
-     <mt:If tag="EntryDataRank" gt="5">
-            <$mt:Include module="one_large"$>
-       </mt:If>
-       </mt:If>
-
-      <mt:If tag="EntryDataType" eq="one big two small">
-     <mt:If tag="EntryDataRank" gt="5">
-            <$mt:Include module="one_big_two_small"$>
-       </mt:If>
-       </mt:If>
-
-      <mt:If tag="EntryDataType" eq="three round">
-     <mt:If tag="EntryDataRank" gt="5">
-            <$mt:Include module="three_round"$>
-       </mt:If>
-       </mt:If>
-
-      <mt:If tag="EntryDataType" eq="three small">
-     <mt:If tag="EntryDataRank" gt="5">
-            <$mt:Include module="three_small"$>
-       </mt:If>
-       </mt:If>
-
-      <mt:If tag="EntryDataType" eq="sidesaddle">
-      <mt:If tag="EntryDataRank" gt="5">
-      <$mt:Include module="sidesaddle"$>
-       </mt:If>
-       </mt:If>
-
-
-</mt:setvarblock>
-
-<mt:setvarblock name="thelisttwo{$thefullentrytwo}"></mt:setvarblock>
-</MTEntries>
-
-
-<mt:loop name="thelisttwo" sort_by="value numeric">
-<mt:var name="__key__"><mt:var name="__value__">
-</mt:loop>
+</mt:entries>
 
 
 
