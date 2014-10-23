@@ -1,21 +1,19 @@
 <mt:EntryCategories>
-<mt:If tag="CategoryLabel" ne="page_category">
-<$mt:CategoryLabel setvar="item-category"$>
-</mt:if>
+<$mt:ArchiveLink type="Category" setvar="page_link"$>
 </mt:EntryCategories>
+
 
 
 <article class="teaser-module clearfix">
 		<header>
-     
-        <h4 class="teaser-module-head"><a href="<$mt:BlogArchiveURL$><$mt:Var name="page_category"$>/<$mt:Var name="item-category"$>" rel="next"><$mt:EntryTitle$></a></h4>
+        <h4 class="teaser-module-head"><a href="<$mt:Var name="page_link"$>" rel="next"><$mt:EntryTitle$></a></h4>
 		</header>
 
 		<div class="teaser-module-abstract">
-		<p><$mt:EntryBody strip_tags="1" smarty_pants="1"$> <a href="<$mt:BlogArchiveURL$><$mt:Var name="page_category"$>/<$mt:Var name="item-category"$>" rel="next" class="teaser-module-abstract-link">More </a></p>
+		<p><$mt:EntryBody strip_tags="1" smarty_pants="1"$> <a href="<$mt:Var name="page_link"$>" rel="next" class="teaser-module-abstract-link">More </a></p>
 		</div>
 
-		<a href="<$mt:BlogArchiveURL$><$mt:Var name="page_category"$>/<$mt:Var name="item-category"$>" rel="next">
+		<a href="<$mt:Var name="page_link"$>" rel="next">
 		<div class="teaser-module-art">
 		<figure class="teaser-module-mainart">
 			<div class="med-photo-overlay"></div>
@@ -23,8 +21,8 @@
 			<picture>          
 				<source srcset="<$mt:BlogArchiveURL$>siteart/large_<mt:EntryDataImage_one>.jpg" media="(min-width:550px)">
 				<source srcset="<$mt:BlogArchiveURL$>siteart/med_<mt:EntryDataImage_one>.jpg" media="(min-width:350px)">
-				<source srcset="siteart/xsmall.jpg">
-				<img src="siteart/medium.jpg" alt="">
+				<source srcset="<$mt:BlogArchiveURL$>siteart/xsmall_<mt:EntryDataImage_one>.jpg">
+				<img src="<$mt:BlogArchiveURL$>siteart/med_<mt:EntryDataImage_one>.jpg" class="lazyload" alt="">
 			</picture>	  
 		</figure>
 					
