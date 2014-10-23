@@ -52,8 +52,8 @@ background-image:url("siteart/hero_index.jpg");
  
 <$mt:Include module="secondary_header"$>
 <div id="index" class="hero-art backgound-set">
-
-<div class="main-header">
+<div class="hero-overlay" id="main-overlay"></div>
+<div class="main-header" id="main-header">
 <header>
 <h1 class="main_header_nameplate"><a href=""><span class="kern-fix-two">d</span><span class="kern-fix">a</span>vi<span class="kern-fix-two">d</span>putney.c<span class="kern-fix-two">o</span>m</a></h1>
 </header>
@@ -117,7 +117,7 @@ background-image:url("siteart/hero_index.jpg");
 
 		</figure>
 		<h2 class="triple-module-head">I design websites</h2>
-		<p class="triple-module-text">Sitting behind the computer monitor on Phil Beauregards cluttered desk at a startup called Objective Logistics is a hardcover book published in 2011:</p>		
+		<p class="triple-module-text">I&#146;m a web designer and developer living in the Boston area. I specialize in media and content-driven websites. </p>		
 		</li>
 
 		<li>
@@ -137,7 +137,7 @@ background-image:url("siteart/hero_index.jpg");
 				
 		</figure>
 		<h2 class="triple-module-head">CSS + HTML + jQuery</h2>		
-		<p class="triple-module-text">Sitting behind the computer monitor on Phil Beauregards cluttered desk at a startup called Objective Logistics is a hardcover .</p>		
+		<p class="triple-module-text">I know the language of the internet and build the sites that I design. I code from the earliest prototypes to the final product. </p>		
 		</li>		
 		
 		<li>
@@ -157,7 +157,7 @@ background-image:url("siteart/hero_index.jpg");
 		
 		</figure>
 		<h2 class="triple-module-head">I launch products</h2>			
-		<p class="triple-module-text">Sitting behind the computer monitor on Phil Beauregards cluttered desk at a startup called Objective Logistics is a hardcover book published in 2011:</p>
+		<p class="triple-module-text">I&#146;ve had the opportunity to launch multiple ambitious new products through the years, both online and in print.</p>
 		</li>
 		
 	</ul>
@@ -172,6 +172,7 @@ background-image:url("siteart/hero_index.jpg");
     <mt:Entries category="Design" include_blogs="10"> 
     <mt:If tag="EntryDataType" eq="header">
      <mt:If name="counter" lt="2">
+    <$mt:Var name="page_category" value="design"$>
     <$mt:Include module="front_page_teaser"$>
       <$mt:SetVar name="counter" op="+" value="1"$>
 </mt:if>
@@ -216,7 +217,8 @@ background-image:url("siteart/hero_index.jpg");
     <$mt:Var name="counter" value="0"$>
     <mt:Entries category="Projects" include_blogs="10"> 
     <mt:If tag="EntryDataType" eq="header">
-     <mt:If name="counter" lt="2">   
+     <mt:If name="counter" lt="2"> 
+    <$mt:Var name="page_category" value="projects"$>
     <$mt:Include module="front_page_teaser"$> 
       <$mt:SetVar name="counter" op="+" value="1"$>
 </mt:if>
