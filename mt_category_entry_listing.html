@@ -85,8 +85,8 @@
 
 
      <mt:If tag="EntryDataType" eq="header">
-                <h1 class="portfolio-project-name"><$MTEntryTitle$></h1>
-            <p class="page-subhead">yyy<mt:EntryDataCategory_subhead$></p>
+                <h1 class="portfolio-project-name"><$MTEntryTitle smarty_pants="1"$></h1>
+            <p class="page-subhead"><mt:EntryDataCategory_subhead smarty_pants="1"$></p>
      </mt:If>
 
 </mt:Entries>
