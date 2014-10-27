@@ -12,8 +12,7 @@
 <$mt:Include module="embedded_CSS_inside"$>
 </style> 
 
-<link href="css/styles.css" rel="stylesheet" type="text/css" media="all" /> 
-
+<link href="<mt:BlogURL>css/styles.css" rel="stylesheet" type="text/css" media="all" /> 
 <!--[if lt IE 9]>
 	<link rel="stylesheet" type="text/css" href="css/ie_styles.css" />
 <![endif]-->
@@ -22,7 +21,6 @@
 	<link rel="stylesheet" type="text/css" href="css/ie_styles.css" />
 <![endif]-->
 
-<link href="<mt:BlogURL>css/styles.css" rel="stylesheet" type="text/css" media="all" /> 
 
 <$mt:Include module="fonts_links"$>
 
