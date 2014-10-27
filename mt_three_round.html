@@ -1,5 +1,5 @@
 		<article>
-		<header><h2 class="section-header"><span>~</span> <$mt:EntryTitle$> <span>~</span></h2></header>
+		<header><h2 class="section-header"><span>~</span> <$mt:EntryTitle smarty_pants="1"$> <span>~</span></h2></header>
  
 <mt:If tag="EntryDataImage_one">      
 <$mt:EntryDataImage_one setvar="image_one"$>             
@@ -13,17 +13,6 @@
 <$mt:EntryDataImage_three setvar="image_three"$>             
 </mt:If> 
         
-        
-<mt:If tag="EntryDataSlideshow">
-        <$mt:EntryDataSlideshow setvar="value"$>              
-</mt:If>
-
-        
-<mt:If name="value" eq="1">
-        <p>slideshow</p>
- 
-
-<mt:else>
               
 <ul class="triple-module-portfolio clearfix">		
 		<li>
@@ -31,7 +20,7 @@
 			<div class="round-photo-overlay"></div>
 			<img src="<$mt:BlogURL$>siteart/square_<$mt:Var name="image_one"$>.jpg" class="lazyload" alt="">
 		</figure>
-		<p class="triple-module-text"><mt:EntryBody></p>		
+		<p class="triple-module-text"><mt:EntryBody smarty_pants="1"></p>		
 		</li>
 
 		<li>
@@ -39,7 +28,7 @@
 			<div class="round-photo-overlay"></div>		
 			<img src="<$mt:BlogURL$>siteart/square_<$mt:Var name="image_two"$>.jpg" class="lazyload" alt="">
 		</figure>
-		<p class="triple-module-text"><mt:EntryDataBody_two></p>		
+		<p class="triple-module-text"><mt:EntryDataBody_two smarty_pants="1"></p>		
 		</li>		
 		
 		<li>
@@ -47,10 +36,7 @@
 			<div class="round-photo-overlay"></div>		
 			<img src="<$mt:BlogURL$>siteart/square_<$mt:Var name="image_three"$>.jpg" class="lazyload" alt="">
 		</figure>
-		<p class="triple-module-text"><mt:EntryDataBody_three></p>
-		</li>
-		
-	</ul>
-        
- </mt:if>          
+		<p class="triple-module-text"><mt:EntryDataBody_three smarty_pants="1"></p>
+		</li>		
+	</ul>          
 	</article>	
