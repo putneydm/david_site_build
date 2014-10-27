@@ -2,11 +2,32 @@
     <header><h2 class="section-header"><span>~</span> <$mt:EntryTitle smarty_pants="1"$> <span>~</span></h2></header>
 			<p class="page-subhead"><$mt:EntryBody smarty_pants="1"$>  </p>
 
-    
 <mt:If tag="EntryDataImage_one">      
-<$mt:EntryDataImage_one setvar="image"$>             
+<$mt:EntryDataImage_one setvar="image_one"$>             
  </mt:If> 
     
+<mt:If tag="EntryDataImage_two">      
+<$mt:EntryDataImage_two setvar="image_two"$>             
+</mt:If>   
+    
+                
+<$mt:EntryDataSlideshow setvar="value"$>                  
+
+<mt:If name="value" eq="1">
+   	<figure class="big-text-module-image slideshow slideheight">
+				<div class="med-photo-overlay"></div>
+				<div class="slide-container" id="slideshow">
+				<div>
+				<img src="<$mt:BlogURL$>siteart/slide_one_<$mt:Var name="image_one"$>.jpg" alt="" class="slide-one"/>
+				</div>
+				<div>
+				<img src="<$mt:BlogURL$>siteart/slide_two_<$mt:Var name="image_two"$>.jpg" alt="" class="slide-two"/></div>
+				</div>
+	</figure> 
+
+    
+    
+   <mt:Else>  
 		<figure class="big-text-module-image">
 				<div class="med-photo-overlay"></div>      
 				<picture>
