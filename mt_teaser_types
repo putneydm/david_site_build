@@ -18,6 +18,11 @@
       <$mt:Include module="sidesaddle"$>
        </mt:If>
 
+<mt:If tag="EntryDataType" eq="sidesaddle_large">
+      <$mt:Include module="sidesaddle_large"$>
+       </mt:If>
+
+
       <mt:If tag="EntryDataType" eq="parallax">
       <$mt:Include module="parallax"$>
        </mt:If>
