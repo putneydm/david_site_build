@@ -557,6 +557,63 @@ gulp.task('heroi', function () {
 });
 
 
+gulp.task('slmed', function () {
+
+
+ gulp.src(paths.images.input)
+    .pipe(gm(function (gmfile){
+      return gmfile.setFormat('jpg'),
+      		 gmfile.resample(72, 72),
+             gmfile.resize(900, null),
+             gmfile.crop(900, 531, 0, 0),
+             gmfile.quality(25);
+             // gulp // Again, I don't think this belongs here
+    }, {
+      imageMagick: true
+    }))
+
+    // Crunches images
+    .pipe(imagemin({
+      progressive: true,
+      use: [jpegtran()]
+    }))
+
+
+    .pipe(gulp.dest(paths.images.output)); // ./dist/main/text/ciao/bonjour-aloha-hola.md
+
+
+});
+
+
+gulp.task('slg', function () {
+
+
+ gulp.src(paths.images.input)
+    .pipe(gm(function (gmfile) {
+      return gmfile.setFormat('jpg'),
+      		 gmfile.resample(72, 72),
+             gmfile.resize(1800, null),
+             gmfile.crop(1800, 1060, 0, 0),
+             gmfile.quality(25);
+             // gulp // I don't think this belongs here
+      }, {
+        imageMagick: true
+      }
+    ))
+
+    // Crunches images
+    .pipe(imagemin({
+      progressive: true,
+      use: [jpegtran()]
+    }))
+
+
+    .pipe(gulp.dest(paths.images.output)); // ./dist/main/text/ciao/bonjour-aloha-hola.md
+
+
+});
+
+
 // Rename images
 gulp.task('rename', function () {
   gulp.src(paths.images.dist, { base: process.cwd() })
