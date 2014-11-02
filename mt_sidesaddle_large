@@ -1,6 +1,6 @@
 	<article class="sidesaddle-module">
 		
-    <header><h2 class="section-header"><span>~ </span><mt:EntryTitle><span> ~</span></h2></header>
+    <header><h2 class="section-header"><span>~ </span><mt:EntryTitle smarty_pants="1"><span> ~</span></h2></header>
 
  <mt:If tag="EntryDataImage_one">      
 <$mt:EntryDataImage_one setvar="image_one"$>             
@@ -49,7 +49,7 @@
 		
 </mtIf>  		
 		<div class="sidesaddle-module-textblock clearfix">
-		<mt:EntryBody>
+		<mt:EntryBody smarty_pants="1">
 
 
 		</div>
