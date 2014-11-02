@@ -20,7 +20,7 @@
 
 <mt:If name="value" eq="1">
 
-   	<figure class="sidesaddle-module-image slideshow">
+   	<figure class="sidesaddle-module-image slideshow slideshow-deep">
 				<div class="med-photo-overlay"></div>
 				<div class="slide-container" id="slideshow">
 				<div>
