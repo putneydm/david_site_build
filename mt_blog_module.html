@@ -1,22 +1,12 @@
 <div class="blog-container">
-<article class="blog-entry">
-    
-	<mt:Entries category="blog entry">
-<h2 class="blog-headline"><a href="<mt:entrypermalink>" rel="next"><mt:EntryTitle smarty_pants="1"></a></h2>
-
-    <p class="blog-entry-date"><mt:EntryDate format="%A, %b %e, %Y"></p>
-
-<div class="blog-entry-text">
-<mt:EntryBody smarty_pants="1">
-</div>
-<footer>
-	<ul class="blog-tags">
-<mt:EntryTags>
-    <li><a href="<$mt:TagSearchLink$>" rel="tag"><mt:TagName></a></li>
-</mt:EntryTags>
-	</ul>
-</footer>
-    </mt:entries>
-</article>
-</div>
-   
+ <mt:If name="page" eq="index">
+<mt:Entries category="blog entry" lastn="1">
+<h2 class="section-header"><span>~</span> <a href="http://www.davidputney.com/blog" rel="next">Blog</a> <span>~</span></h2>
+<mt:If tag="EntryDataImage_one">
+<a href="<mt:entrypermalink>" rel="next">
+<$mt:Include module="blog_image"$>
+</a>
+</mt:If>
+<h3 class="blog-headline"><a href="<mt:entrypermalink>" rel="next"><mt:EntryTitle smarty_pants="1"></a></h3>
+<p class="blog-entry-date"><mt:EntryDate format="%A, %b %e, %Y"></p>
+<div class="blog-entry-text
