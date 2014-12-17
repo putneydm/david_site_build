@@ -7,6 +7,22 @@
 
 
 <!-- meta tags  -->
+<mtentries>
+ <mt:If tag="EntryDataType" eq="header">
+ <mt:entrybody smarty_pants="0" setvar="og_description"$>
+ </mt:If>
+</mtentries>
+
+<mt:EntryCategories>
+<mt:ArchiveLink type="Category" setvar="og_link"$>
+</mt:EntryCategories>
+
+<mt:PageDataPage_subhead smarty_pants="0" setvar="og_title"$>
+
+<$mt:Var name="og_content" value="article"$>
+<$mt:Include module="meta_tags"$>
+
+
 
 <mt:If tag="PageDataHero_art">
 <$mt:PageDataHero_art setvar="hero_art"$>
