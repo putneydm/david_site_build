@@ -23,7 +23,7 @@ var imagemin = require('gulp-imagemin');
 var jpegtran = require('gulp-imagemin/node_modules/imagemin/node_modules/imagemin-jpegtran');
 var gm = require('gulp-gm');
 var rename = require('gulp-rename');
-
+var minifyHTML = require('gulp-minify-html');
 
 /**
  * Paths
@@ -34,7 +34,7 @@ var rename = require('gulp-rename');
 var paths = {
   scripts : {
     input : 'scripts/min/*.js',
-    output : './scripts_concat/'
+    output : 'scripts/concat/'
   },
   styles : {
     input : 'css/*.css',
@@ -48,6 +48,11 @@ var paths = {
     dist : 'test_image/dist/*.jpg',
     input : 'test_image/*',
     output : './siteart/'
+  }, 
+  
+  html : {
+    input : 'master_mt_files/*.html',
+    output : 'minified_mt_files/'
   }
 };
 
@@ -630,4 +635,15 @@ gulp.task('rename', function () {
  */
 gulp.task('default', function(){
   // Default task code
+});
+
+
+
+
+gulp.task('mh', function() {
+    var opts = {quotes:true};
+
+  gulp.src(paths.html.input)
+    .pipe(minifyHTML(opts))
+    .pipe(gulp.dest(paths.html.output))
 });
