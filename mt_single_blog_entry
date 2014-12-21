@@ -5,8 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"> 
 <meta charset="utf-8">
 
-<!-- @import "modules/head/meta.html" -->  
- 
+<mt:EntryBody words="20" smarty_pants="0" setvar="og_description"$>
+<mt:EntryTitle smarty_pants="0" setvar="og_title"$>
+<mt:EntryPermalink smarty_pants="0" setvar="og_link"$>
+<$mt:Var name="og_content" value="article"$>
+<$mt:Include module="meta_tags"$>
  
 <style rel="stylesheet" type="text/css" media="all">
 <$mt:Include module="embedded_CSS_inside"$>
