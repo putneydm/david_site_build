@@ -305,7 +305,7 @@ gulp.task('hero', function () {
       		 gmfile.resample(72, 72),
              gmfile.resize(2300, null),
              gmfile.crop(2300, 856, 0, 0),
-             gmfile.quality(30);
+             gmfile.quality(45);
              // gulp // Again, I don't think this belongs here
     },{
       imageMagick: true
@@ -332,7 +332,7 @@ gulp.task('hero', function () {
       		 gmfile.resample(72, 72),
              gmfile.resize(1500, null),
              gmfile.crop(1500, 558, 0, 0),
-             gmfile.quality(30);
+             gmfile.quality(35);
              // gulp // Again, I don't think this belongs here
     }, {
       imageMagick: true
@@ -444,7 +444,7 @@ gulp.task('heroi', function () {
       		 gmfile.resample(72, 72),
              gmfile.resize(2300, null),
              gmfile.crop(2300, 1040, 0, 0),
-             gmfile.quality(30);
+             gmfile.quality(45);
              // gulp // Again, I don't think this belongs here
     },{
       imageMagick: true
