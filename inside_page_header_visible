@@ -1,0 +1,18 @@
+<nav class="inside-header inside-header-active inside-header-fixed">
+	<div class="secondary-navigation-container">	
+	<p class="secondary-header-nameplate" itemscope itemtype="http://data-vocabulary.org/Person"><a href="<mtBlogURL>" rel="nofollow"><span itemprop="name">David Putney</span> <span class="hidden" itemprop="title">Web designer and developer</span></a></p>	
+	<div id="menu-button" class="secondary-header-button">
+	<a href="#footer-nav" rel="nofollow" class="button-link">
+	<span class="button_visible">menu</span>
+	</a>
+	<span aria-hidden="true">
+	<svg width="32" height="20" class="icon button_hidden">
+      <use x="12" y="8" xlink:href="#close-box" />
+    </svg>
+    </span>		
+	</div>	
+	<ul id="nav-start" class="secondary-navigation-menu clearfix">
+     <$mt:Include module="nav_links"$>
+	</ul>
+	</div>
+</nav>
