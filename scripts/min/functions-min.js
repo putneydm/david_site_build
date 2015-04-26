@@ -1,45 +1,4 @@
-var testingVar = {
-
-//	
-	
-	intialize: function() {
-	variableThing = document.getElementById('main-header-nameplate');
-
-	this.initListeners();
-		
-		return this
-	
-	},
-	
-	initListeners: function (){
-	var self = this;
-	
-		console.log('vax' + variableThing);
-
-		variableThing.addEventListener("click", self.doStuff);
-
-//function myFunction() {
-  //  alert ("Hello World!");
-//}
-
-	},
-	
-	
-	doStuff: function() {
-	
-		console.log('yo!');
-	}
-	
-	};
-
-
-
 (function() {
-
-
-testingVar.intialize();
-
-
 
 // this adds the links to the items in the footer
 function addLink (target, link) {
