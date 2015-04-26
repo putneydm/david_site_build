@@ -1,0 +1,247 @@
+.secondary-header {
+	position:fixed;
+	width:100%;
+	height:rem(80);
+	background-color:$haze;
+	top:-80px;
+	z-index:100;
+	padding:rem(15) rem(30) 0;
+	transition: top .3s ease-in;
+	@media screen and (max-width:em(750)) 
+		{
+		height:rem(60);
+		padding:rem(10) rem(20);
+		}
+	@media screen and (max-width:em(600)) 
+		{
+		height:rem(60);
+		overflow:hidden;
+		padding:rem(10) 0 0;
+		}	
+}
+.menu-active {
+	height:rem(230) !important;
+	transition: top .15s ease-in, height .15s ease-in;
+	}	
+.secondary-navigation-menu {
+	margin:rem(16) 0 0;
+	padding:0;
+	float:right;
+	clear:right;
+	height:0;
+	line-height:100%;
+	@media screen and (max-width:em(750)) {
+		margin:rem(10) 0 0;
+	}
+	@media screen and (max-width:em(600)) {
+		width:100%;
+	}
+		li{
+		font-size:em(20);
+		font-family:$sans;
+		text-transform:uppercase;
+		text-align:right;
+		display:inline-block;
+		margin:0 0 0 -4px;
+		color:$dark;
+		padding:0 rem(3) 0 rem(8);
+		font-weight:700;
+		line-height:100%;
+			a {
+			color:$med;
+			background:none;
+			text-shadow:none;			
+				&:hover{
+				color:white;
+				background:none;
+				}
+			}
+			&:after {
+				content:'|';
+				display:inline-block;
+				padding:0 0 0 rem(8);
+				color:$light;
+			}			
+			&:nth-child(4) {			
+				&:after {
+				content:'';
+				}							
+			}
+		@media screen and (max-width:em(750)) {
+			font-size:em(18);
+			margin-top:rem(1);
+			}
+		@media screen and (max-width:em(600)) {
+			display:block;
+			width:100%;
+			text-align:center;
+			margin:rem(8) 0 rem(24) 0;
+			font-size:em(16);				
+				&:after
+				{
+				content:''
+				}
+			}
+		}
+}
+.secondary-navigation-container {
+	max-width:rem(1100);
+	margin:0 auto;	
+	}
+.secondary-header-nameplate	{
+	font-family:$flair;
+	font-size:em(42);
+	font-style:italic;
+	font-weight:bold;
+	display:inline-block;
+	margin:rem(8) 0 0 rem(10);
+	line-height:100%;
+		a {
+		background-image:none;
+		text-shadow:none;
+		color:$aqua;	
+		&:hover {
+			color:$dark-aqua;
+			}		
+		}
+	@media screen and (max-width:em(750)) {
+	font-size:em(36);
+	margin:rem(7) 0 0 rem(8);
+	}	
+}	
+.secondary-header-button {
+	font-family:$sans;
+	width:rem(60);
+	font-size:em(9);
+	text-transform:uppercase;
+	color:$light;
+	display:block;
+	float:right;
+	height:rem(25);
+	margin:rem(8) rem(15) 0 0;
+	background-color:white;
+	text-align:center;
+	line-height:rem(24);
+	font-weight:600;
+	letter-spacing:.07em;
+	border:rem(1) solid $light;
+	border-radius:rem(2);
+	display:none;	
+		a {
+		background:none;		
+		}
+	@media screen and (max-width:em(600)) {
+		display:block;
+		}
+}
+.button-hidden {
+	display:none;
+	opacity:0;
+	transition:opacity .2s;
+	}
+.button-active {
+	display:block;
+	opacity:1;
+	transition:opacity .2s;
+}		
+.icon {
+margin:0 auto;
+}	
+.close-box {
+	fill:$aqua;	
+	&:hover {
+		fill:$dark_aqua;		
+		}
+}
+.inside-header {
+	position:absolute;
+	width:100%;
+	height:rem(80);
+	top:0;
+	z-index:100;
+	padding:rem(15) rem(30) 0;
+background: linear-gradient(to bottom, rgba(102,102,102,0.55) 0%,rgba(153,153,153,0.3) 46%,rgba(0,0,0,0) 100%);	
+	@media screen and (max-width:em(750)) {
+		height:rem(60);
+		padding:rem(10) rem(20);
+		}
+	@media screen and (max-width:em(600)) {
+		height:rem(60);
+		overflow:hidden;
+		padding:rem(10) 0 0;
+		}
+		.secondary-header-nameplate	{
+			color:white;			
+				a {
+				color:white;
+				}
+		}	
+	.secondary-navigation-menu {
+		li{		
+		color:white;			
+			a {
+			color:white;			
+				&:hover {
+				color:$aqua;
+				background:none;
+				}
+			}
+		}
+	}
+}		
+.inside-header-ready {
+	background: $haze;
+	position:fixed;
+	top:-80px;
+}					
+	.inside-header-active {
+		background: $haze;
+		top:0;
+		transition: top .3s ease-in, height 200ms cubic-bezier(0.175, 0.885, 0.365, 1.420); /* easeInBack */	
+		.secondary-header-nameplate	{
+			color:white;			
+			a {
+			color:$aqua;
+			}
+	}		
+	.secondary-navigation-menu {
+		li {		
+		color:$med;
+			a {
+			color:$med;
+			}
+		}
+	}	
+}		
+.inside-header-fixed {
+	position:fixed;	
+}
+	
+.hero-overlay {
+	&:after{
+	width:100%;
+	height:100%;
+	width:100%;
+	background-color:white;
+	content:' ';
+	position:absolute;
+	top:0;
+	left:0;
+	transition:opacity .4s ease-in;
+	opacity:0;
+	}	
+}
+
+.hero-fadeout {
+	&:after {
+		transition:opacity .4s ease-in;
+		opacity:1;
+		background-color:white;
+		}
+}
+.filter-me
+	{
+	filter: blur(2px) grayscale(70%);	
+	transition: .3s -webkit-filter linear;
+	transition:filter .3s;
+	}		
