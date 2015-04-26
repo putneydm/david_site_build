@@ -24,6 +24,7 @@ var jpegtran = require('gulp-imagemin/node_modules/imagemin/node_modules/imagemi
 var gm = require('gulp-gm');
 var rename = require('gulp-rename');
 var minifyHTML = require('gulp-minify-html');
+var cssBase64 = require('gulp-css-base64');
 
 /**
  * Paths
@@ -53,7 +54,18 @@ var paths = {
   html : {
     input : 'master_mt_files/*.html',
     output : 'minified_mt_files/'
+  },
+  
+	fonts : {
+    input : 'fonts_convert/*.css',
+    output : 'fonts/'
+  },
+  
+  mini : {
+  	input : 'fonts/*.css',
+	output : 'fonts/fonts-min/'  
   }
+  
 };
 
 /**
