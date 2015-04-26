@@ -659,3 +659,25 @@ gulp.task('mh', function() {
     .pipe(minifyHTML(opts))
     .pipe(gulp.dest(paths.html.output))
 });
+
+
+gulp.task('cssBase64', function () {
+    return gulp.src(paths.fonts.input)
+         .pipe(cssBase64({
+            maxImageSize: 8*10024 // bytes 
+        }))
+        .pipe(gulp.dest(paths.fonts.output));
+});
+
+
+
+
+
+
+gulp.task('minify-fonts', function() {
+  gulp.src(paths.mini.input)
+    .pipe(minifyCSS({
+      keepBreaks:false
+    }))
+    .pipe(gulp.dest(paths.mini.output));
+});
