@@ -1,1 +1,231 @@
-$(document).ready(function(){function t(){$("html, body").animate({scrollTop:0},150)}function e(t){$(t+" > div:gt(0)").hide(),setInterval(function(){$(t+" > div:first").fadeOut(1e3).next().fadeIn(1e3).end().appendTo(t)},3e3)}function i(){$(".slide-container").each(function(){var t="#"+$(this).attr("id");e(t)})}function o(t){var e=$(window).width();if(e>0&&500>e)var i=file_path+"sm_hero_"+t+".jpg";if(e>500&&700>e)var i=file_path+"med_hero_"+t+".jpg";if(e>700&&5e3>e)var i=file_path+"hero_"+t+".jpg";var o="#"+t,n=new Image;n.onload=function(){$(o).css("background-image","url('"+i+"')")},n.src=i}$("#email-link").wrap('<a href="mailto:david@davidputney.com?Subject=Website%20feedback" target="_top">'),$("#twitter-link").wrap('<a href="https://twitter.com/putneydm">'),$("#facebook-link").wrap('<a href="	https://www.facebook.com/david.putney">'),$("a").each(function(){var t=$(this).attr("href");0!==t.indexOf("#")&&$(this).bind("tap",function(){window.location.href=this.href})}),$("#scroll-to-top").click(function(){return t(),!1}),$("#menu-button").bind("tap",function(t){var e="#"+$("#menu-button").closest("nav").attr("id"),i=$(e).height();65>i?($(e).addClass("menu-active"),$(".button_hidden").show(),$(".button_visible").hide()):($(e).removeClass("menu-active"),$(".button_hidden").hide(),$(".button_visible").show())}),i(),$(".backgound-set").each(function(){var t=$(this).attr("id");o(t)})}),$(window).resize(function(){$("#secondary-header, #inside-header").removeClass("menu-active"),$(".button_hidden").hide(),$(".button_visible").show()}),$(window).scroll(function(){function t(t,e){e>t&&$("#secondary-header").addClass("social-menu-show"),t>e&&($("#secondary-header").removeClass("social-menu-show").removeClass("menu-active"),$(".button_hidden").hide(),$(".button_visible").show())}function e(t){t>300&&900>i&&$("#scroll-to-top").fadeIn(200),300>t&&$("#scroll-to-top").fadeOut(200)}var i=$(window).width();scroll_position=$(document).scrollTop(),main_position=$("#main").offset(),$.data(this,"scrollTimer",setTimeout(function(){t(main_position.top,scroll_position);var i=$(document).scrollTop();e(i)},50)),fade=main_position.top+80-scroll_position,fade2=fade/main_position.top,fade3=1-fade2,$("#main-header").css({opacity:fade2}),$("#main-overlay").css({opacity:fade3})});
+var testingVar = {
+
+//	
+	
+	intialize: function() {
+	variableThing = document.getElementById('main-header-nameplate');
+
+	this.initListeners();
+		
+		return this
+	
+	},
+	
+	initListeners: function (){
+	var self = this;
+	
+		console.log('vax' + variableThing);
+
+		variableThing.addEventListener("click", self.doStuff);
+
+//function myFunction() {
+  //  alert ("Hello World!");
+//}
+
+	},
+	
+	
+	doStuff: function() {
+	
+		console.log('yo!');
+	}
+	
+	};
+
+
+
+(function() {
+
+
+testingVar.intialize();
+
+
+
+// this adds the links to the items in the footer
+function addLink (target, link) {
+	orgHtml = document.getElementById(target).innerHTML;
+	newHtml = link + orgHtml + "</a>";
+	document.getElementById(target).innerHTML = newHtml;
+}
+
+linkCounter = 0;
+links = ['email-link', 'twitter-link', 'facebook-link'];
+urls = ['<a href="mailto:david@davidputney.com?Subject=Website%20feedback" target="_top">', '<a href="https://twitter.com/putneydm">', '<a href="https://www.facebook.com/david.putney">']
+		
+while (linkCounter < links.length) {   	
+	addLink (links[linkCounter], urls[linkCounter])
+	linkCounter++;
+}
+
+// this swaps out the hero image for a higher res version on page load
+var window_width = window.innerWidth; // finds width of browser window
+var getPageType = document.getElementsByTagName('Body')[0];
+var pageType = getPageType.getAttribute('data-pagetype');//reads page type data off body tag
+	getImage = document.getElementById('hero-image');
+	image = getImage.getAttribute('data-image');	//reads name of hero image off data tag on hero image tag
+		console.log(getImage);
+			console.log('works');
+
+function set_background(image) {
+	if (pageType === 'index-page' && window_width < 700) {
+		image_url = 'siteart/med_hero_' + image + '.jpg';	
+		}
+	if (pageType === 'index-page' && window_width > 700 && window_width < 5000) {
+		image_url = 'siteart/hero_' + image + '.jpg';
+		}
+	if (pageType === 'section-page' && window_width < 700) {
+		var image_url = '../siteart/med_hero_' + image + '.jpg';	
+		}	
+	if (pageType === 'section-page' && window_width > 700 && window_width < 5000) {
+		 image_url = '../siteart/hero_' + image + '.jpg';
+		}
+
+	if (pageType === 'portfolio-page' && window_width < 700) {
+		image_url = '../../siteart/med_hero_' + image + '.jpg';	
+		}	
+	if (pageType === 'portfolio-page' && window_width > 700 && window_width < 5000) {
+		image_url = '../../siteart/hero_' + image + '.jpg';
+		}
+		var img = new Image();
+		img.onload = function(){
+		document.getElementById('hero-image').style.backgroundImage = 'url('+image_url+')';		  
+		};
+		img.src = image_url; 
+		}	
+set_background(image)	// sets background image
+
+// this does the nameplate animations on load
+var nameplate = document.getElementById('main-header-nameplate');
+var navigation = document.getElementById('navigation-menu');
+var heroImage = document.getElementById('hero-image');
+var siteSubhead = document.getElementById('main-subhead');
+
+function nameplateAnimate(nameplate, navigation, heroImage, siteSubhead) {		
+		if (nameplate !== null)	{
+		nameplate.classList.add('main-header-nameplate-active');
+		navigation.classList.add('navigation-menu-active');
+		siteSubhead.classList.toggle('triple-module-head-active');
+		}
+		if (heroImage !== null)	{
+		heroImage.classList.remove('filter-me');
+		}		
+	}
+
+nameplateAnimate(nameplate, navigation, heroImage, siteSubhead); // animates nameplate on load
+
+// animates scroll to top with the scroll to top button on mobile	
+document.getElementById('scroll-to-top').onclick = function () {
+    scrollTo(document.body, 0, 500);   
+}
+function scrollTo(element, to, duration) {
+    var start = element.scrollTop,
+        change = to - start,
+        currentTime = 0,
+        increment = 20;
+
+    var animateScroll = function(){        
+        currentTime += increment;
+        var val = Math.easeInOutQuad(currentTime, start, change, duration);                        
+        element.scrollTop = val; 
+        if(currentTime < duration) {
+            setTimeout(animateScroll, increment);
+        }
+    };
+    animateScroll();
+}
+//t = current time
+//b = start value
+//c = change in value
+//d = duration
+Math.easeInOutQuad = function (t, b, c, d) {
+    t /= d/2;
+    if (t < 1) return c/2*t*t + b;
+    t--;
+    return -c/2 * (t*(t-2) - 1) + b;
+};	
+
+var menuId = document.getElementById('inside-header');		
+var menu_height = menuId.clientHeight;			            
+var menuButton = document.getElementById('menu-button');
+var menuIcon = menuButton.getElementsByClassName('icon')[0];
+var menuText = menuButton.getElementsByTagName('SPAN')[0];
+	menuButton.addEventListener("click", expandMenu);
+	menuButton.getElementsByTagName('A')[0].addEventListener("click", function(e){
+    	e.preventDefault()
+	});
+
+function expandMenu() { 	 	
+ 	menuText.classList.toggle('button-active');
+  	menuIcon.classList.toggle('button-active');
+ if (menu_height < 51) {
+ 	 menuId.classList.toggle("menu-active");
+	}	
+ else {
+ 	menuId.classList.toggle("menu-active");
+	}	
+} 
+
+var getHeroHeight = document.getElementById("main")
+var heroHeight = getHeroHeight.offsetTop - 190;	
+var scrollButton = document.getElementById('scroll-to-top');
+	heroTarget = image;
+	fadeCounter = 0;
+	activeCounter = 0;
+	scrollTopCounter = 0;
+
+function scroll_up (document_top) {	
+	if (document_top > 300 && window_width < 900 && scrollTopCounter === 0) {
+	scrollButton.classList.toggle('scroll-to-top-active');
+	scrollTopCounter = 1;
+	}
+	
+	if (document_top < 300 && scrollTopCounter === 1) {
+	scrollButton.classList.toggle('scroll-to-top-active');
+	scrollTopCounter = 0;
+	}						
+} 
+
+var targetHeader = document.getElementById('inside-header');
+var targetImage = document.getElementById('hero-image');
+		
+function scrollChange(scroll_position) {	
+	if (heroHeight < scroll_position + 80 && activeCounter === 0) {
+		targetHeader.classList.toggle("inside-header-ready");
+		activeCounter = 1;
+	}	
+	if (heroHeight > scroll_position + 80 && activeCounter === 1) {
+		targetHeader.classList.toggle("inside-header-ready");	
+		activeCounter = 0;
+	}	
+	if (heroHeight - 160 < scroll_position && fadeCounter === 0) {
+		targetImage.classList.toggle("hero-fadeout");
+		targetHeader.classList.toggle('inside-header-active');
+		fadeCounter = 1;	
+	}		
+	if (heroHeight > scroll_position && fadeCounter === 1) {
+		targetImage.classList.toggle('hero-fadeout');
+		targetHeader.classList.toggle("inside-header-active");
+		fadeCounter = 0;	
+	}		
+}	
+
+
+
+
+
+window.onscroll = function () {
+	var scroll_position = window.scrollY;
+	scrollChange(scroll_position)
+	scroll_up (scroll_position)
+}
+})();
+
+/*
+$(window) .resize (function () {		
+	$('#secondary-header, #inside-header') .removeClass ('menu-active');
+	$('.button_hidden') .hide ();
+	$('.button_visible') .show ();
+	});
+	
+*/	
+
