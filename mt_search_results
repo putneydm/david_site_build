@@ -36,7 +36,7 @@
 
 <!-- @import "modules/head/skip_links.html" --> 
 
-<$mt:Include module="inside_page_header"$>
+<$mt:Include module="inside_page_header_visible"$>
 
 <main id="main">
 
