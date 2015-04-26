@@ -61,8 +61,8 @@
 </mt:If>
 <mt:EntryMore smarty_pants="1">
 
-
 <footer>
+<$mt:Include module="blog_sig"$>
 	<ul class="blog-tags">
 <mt:EntryTags>
     <li><a href="<$mt:TagSearchLink$>" rel="tag"><mt:TagName></a></li>
