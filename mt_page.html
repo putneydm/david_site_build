@@ -1,28 +1,49 @@
 <!DOCTYPE html>
 <html class="no-js">
 <head>
-<title>Davidputney.com | <mt:PageDataCategory></title>
+<title>David Putney | <mt:PageDataCategory> <mt:If tag="PageDataCategory" eq="Design">
+portfolio</mt:if><mt:If tag="PageDataCategory" eq="Projects">
+portfolio</mt:if>
+
+<mt:If tag="PageDataCategory" eq="Projects">
+<$mt:Var name="og_url" value="www.davidputney.com/archive/projects.html"$>
+</mt:if></title>
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"> 
 <meta charset="utf-8">
-
+<link rel="shortcut icon" href="http://www.davidputney.com/favicon.ico" />
 
 <!-- meta tags  -->
-<mtentries>
- <mt:If tag="EntryDataType" eq="header">
- <mt:entrybody smarty_pants="0" setvar="og_description"$>
- </mt:If>
-</mtentries>
 
-<mt:EntryCategories>
-<mt:ArchiveLink type="Category" setvar="og_link"$>
-</mt:EntryCategories>
+<mt:PageDataHeader smarty_pants="0" setvar="og_title"$>
 
-<mt:PageDataPage_subhead smarty_pants="0" setvar="og_title"$>
+<mt:If tag="PageDataCategory" eq="Blog">
+<$mt:Var name="og_url" value="www.davidputney.com/blog/"$>
+<$mt:Var name="og_description" value="An occasional blog about design and creativity and other topics written by David Putney, a web UI/UX designer and developer living in Boston."$>
+</mt:if>
 
-<$mt:Var name="og_content" value="article"$>
+<mt:If tag="PageDataCategory" eq="about">
+<$mt:Var name="og_url" value="www.davidputney.com/about/"$>
+<$mt:Var name="og_description" value="Resume and work experience for David Putney, a web UI/UX designer and developer living in Boston. His work includes Crux.com, RadioBDC, BDCwire.com and other websites."$>
+</mt:if>
+
+<mt:If tag="PageDataCategory" eq="Design">
+<$mt:Var name="og_url" value="www.davidputney.com/archive/design.html"$>
+<$mt:Var name="og_description" value="Professional UI/UX web design and development portfolio for David Putney that includes samples of work from Crux, RadioBDC, BDCwire and other websites."$>
+</mt:if>
+
+<mt:If tag="PageDataCategory" eq="Projects">
+<$mt:Var name="og_url" value="www.davidputney.com/archive/projects.html"$>
+<$mt:Var name="og_description" value="Portfolio of web design and development, hackathon projects or side projects by David Putney, a web UI/UX designer and developer."$>
+
+</mt:if>
+
+<$mt:Var name="og_keywords" value="David Putney, design, portfolio, web development, front-end developer, web design, mobile first, responsive design, HTML, CSS, jQuery"$>
+
+<$mt:PageDataHero_art setvar="og_image">
+<$mt:Var name="og_image" value="http://www.davidputney.com/siteart/sm_hero_" prepend="1"$>
+<$mt:Var name="og_image" value=".jpg" append="1"$>
+
 <$mt:Include module="meta_tags"$>
-
-
 
 <mt:If tag="PageDataHero_art">
 <$mt:PageDataHero_art setvar="hero_art"$>
@@ -32,17 +53,14 @@
 <$mt:PageDataCategory setvar="page_category"$>
 </mt:If>
 
-
 <style rel="stylesheet" type="text/css" media="all">
 <$mt:Include module="embedded_CSS_inside"$>
 </style> 
 <noscript>
 <style>
-.hero-art-portfolio{background-image: url('<$mt:BlogURL$>siteart/pl_hero_<$mt:Var name="hero_art"$>.jpg');}@media screen and (max-width: 46.875em) {.hero-art-portfolio {background-image: url('<$mt:BlogURL$>siteart/pl_hero_small_<$mt:Var name="hero_art"$>.jpg');}}
+.hero-art-portfolio{background-image: url('<$mt:BlogURL$>siteart/hero_<$mt:Var name="hero_art"$>.jpg');}@media screen and (max-width: 46.875em) {.hero-art-portfolio {background-image: url('<$mt:BlogURL$>siteart/sm_hero<$mt:Var name="hero_art"$>.jpg');}}
 </style>
 </noscript>
-
-<link href="<mt:BlogURL>css/styles.css" rel="stylesheet" type="text/css" media="all" /> 
 <!--[if lt IE 9]>
 	<link rel="stylesheet" type="text/css" href="css/ie_styles.css" />
 <![endif]-->
@@ -52,10 +70,10 @@
 <![endif]-->
 
 <$mt:Include module="fonts_links"$>
+<$mt:Include module="css_links"$>
 
 </head>
-
-<body>
+<body data-pagetype="section-page">
 <span class="hidden" aria-hidden="true">
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1"></svg> 
 </span>
@@ -63,37 +81,21 @@
 <li><a href="#nav-start">Skip to navigation</a></li>
 <li><a href="#main">Skip to content</a></li>
 </ul>
- 
- <$mt:Include module="inside_page_header"$>
-
-<header id="<$mt:Var name="hero_art"$>" class="hero-art-portfolio backgound-set">
-	
-<div class="portfolio-shadow-container">
-<div class="portfolio-shadow">
+<$mt:Include module="inside_page_header"$>
+<div id="hero-image" class="hero-art-portfolio backgound-set hero-overlay filter-me" data-image="<$mt:Var name="hero_art"$>">
+</div>
+<div class="hero-art-portfolio-overlay">
 
 </div>
-</div>
-
-<div class="hero-art-shadow-portfolio">
-
-</div>
-
-</header>
-
 
 <main id="main">
-
-<div class="portfolio-introduction-container">
-<header class="portfolio-introduction">
-
+<header class="portfolio-introduction-container">
 <h1 class="portfolio-project-name"><mt:PageDataHeader smarty_pants="1"></h1>
-<p class="page-subhead"><mt:PageDataPage_subhead smarty_pants="1"></p>
+<h2 class="page-subhead"><mt:PageDataPage_subhead smarty_pants="1"></h2>
 </header>
-</div>
-
 
 <mt:If name="page_category" eq="about">
-<$mt:Include module="resume_module"$> 
+<$mt:Include module="about_module"$> 
 </mt:if>
 
 <mt:If name="page_category" eq="Blog">
@@ -158,12 +160,6 @@
     </defs>
 </svg> 
 </div>
- 
-
 </body>
-
  <$mt:Include module="js_links"$>
-
-
-
 </html>
